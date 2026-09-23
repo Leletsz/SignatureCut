@@ -54,7 +54,7 @@ model Haircut{
 
 @@map("haircuts")
 user User @relation(fields: [userId], references: [id])
-userId String @unique
+userId String
 
 service Service[]
 }
@@ -70,5 +70,5 @@ model Service{
   haircut_id String
 
   user User @relation(fields: [user_Id], references: [id])
-  user_Id String @unique
+  user_Id String
 }
