@@ -1,5 +1,5 @@
 import { Response, Request } from "express";
-import { CreateHaircutService } from "../../services/haircut/createHaircutService.js";
+import { CreateHaircutService } from "../../services/haircut/CreateHaircutService.js";
 
 class CreateHaircutController {
   async handle(request: Request, response: Response) {
