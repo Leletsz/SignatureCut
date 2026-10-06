@@ -38,8 +38,8 @@ model Subscription{
   updated_at DateTime? @default(now())
 
    @@map("subscriptions")
-   userId String @unique
-   user User @relation(fields: [userId], references: [id])
+   user_id String @unique
+   user User @relation(fields: [user_id], references: [id])
 
    
 }
@@ -53,8 +53,8 @@ model Haircut{
   updated_at DateTime? @default(now())
 
 @@map("haircuts")
-user User @relation(fields: [userId], references: [id])
-userId String
+user User @relation(fields: [user_id], references: [id])
+user_id String
 
 service Service[]
 }
@@ -69,6 +69,6 @@ model Service{
   haircut Haircut @relation(fields: [haircut_id], references: [id])
   haircut_id String
 
-  user User @relation(fields: [user_Id], references: [id])
-  user_Id String
+  user User @relation(fields: [user_id], references: [id])
+  user_id String
 }

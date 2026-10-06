@@ -4,12 +4,12 @@ import { NewScheduleService } from "../../services/schedule/NewScheduleService.j
 class NewScheduleController {
   async handle(request: Request, response: Response) {
     const { haircut_id, customer } = request.body;
-    const user_Id = request.user_id;
+    const user_id = request.user_id;
 
     const newSchedule = new NewScheduleService();
 
     const schedule = await newSchedule.execute({
-      user_Id,
+      user_id,
       haircut_id,
       customer,
     });

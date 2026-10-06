@@ -8,7 +8,7 @@ class CountHaircutsService {
   async execute({ user_id }: CountRequest) {
     const count = await prisma.haircut.count({
       where: {
-        userId: user_id,
+        user_id: user_id,
       },
     });
 

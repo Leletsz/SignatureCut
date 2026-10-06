@@ -9,7 +9,7 @@ class ListHaircutService {
   async execute({ user_id, status }: HaircutRequest) {
     const haircut = await prisma.haircut.findMany({
       where: {
-        userId: user_id,
+        user_id: user_id,
         status: status === "true" ? true : false,
       },
     });

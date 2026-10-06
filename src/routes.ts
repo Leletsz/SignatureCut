@@ -1,5 +1,4 @@
 import { Router } from "express";
-import type { Request, Response } from "express";
 import { CreateUserController } from "./controllers/user/CreateUserController.js";
 import { AuthUserController } from "./controllers/user/AuthUserController.js";
 import { DetailUserController } from "./controllers/user/DetailUserController.js";
@@ -12,6 +11,7 @@ import { CheckSubscriptionController } from "./controllers/haircut/CheckSubscrip
 import { CountHaircutsController } from "./controllers/haircut/CountHaircutsController.js";
 import { DetailHaircutController } from "./controllers/haircut/DetailHaircutController.js";
 import { NewScheduleController } from "./controllers/schedule/NewScheduleController.js";
+import { ListScheduleController } from "./controllers/schedule/ListScheduleController.js";
 
 const router = Router();
 
@@ -43,5 +43,6 @@ router.get(
 
 //--- Rotas Schedule/Service ---
 router.post("/schedule", isAuthenticated, new NewScheduleController().handle);
+router.get("/schedule", isAuthenticated, new ListScheduleController().handle);
 
 export { router };

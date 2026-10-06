@@ -15,7 +15,7 @@ class CreateHaircutService {
     //Verificar quantos modelos esse usuario ja tem cadastrado
     const haircutsCount = await prisma.haircut.count({
       where: {
-        userId: user_id,
+        user_id: user_id,
       },
     });
 
@@ -36,7 +36,7 @@ class CreateHaircutService {
       data: {
         name: name,
         price: price,
-        userId: user_id,
+        user_id: user_id,
       },
     });
     return haircut;

@@ -1,13 +1,13 @@
 import { prisma } from "../../lib/prisma.js";
 
 interface NewScheduleRequest {
-  user_Id: string;
+  user_id: string;
   haircut_id: string;
   customer: string;
 }
 
 class NewScheduleService {
-  async execute({ user_Id, haircut_id, customer }: NewScheduleRequest) {
+  async execute({ user_id, haircut_id, customer }: NewScheduleRequest) {
     if (customer === "" || haircut_id === "") {
       throw new Error("Error schedule new service.");
     }
@@ -15,7 +15,7 @@ class NewScheduleService {
       data: {
         customer,
         haircut_id,
-        user_Id,
+        user_id,
       },
     });
     return schedule;
