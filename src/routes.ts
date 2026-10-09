@@ -12,6 +12,7 @@ import { CountHaircutsController } from "./controllers/haircut/CountHaircutsCont
 import { DetailHaircutController } from "./controllers/haircut/DetailHaircutController.js";
 import { NewScheduleController } from "./controllers/schedule/NewScheduleController.js";
 import { ListScheduleController } from "./controllers/schedule/ListScheduleController.js";
+import { FinishScheduleController } from "./controllers/schedule/FinishScheduleController.js";
 
 const router = Router();
 
@@ -44,5 +45,10 @@ router.get(
 //--- Rotas Schedule/Service ---
 router.post("/schedule", isAuthenticated, new NewScheduleController().handle);
 router.get("/schedule", isAuthenticated, new ListScheduleController().handle);
+router.delete(
+  "/schedule",
+  isAuthenticated,
+  new FinishScheduleController().handle,
+);
 
 export { router };
